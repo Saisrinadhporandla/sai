@@ -33,11 +33,10 @@ public class Practice_Page {
 	    boolean asse=itemsIn.stream().anyMatch(i->i.getText().equalsIgnoreCase(name));
 	    Assert.assertTrue(asse);
 	    CheckOut checkout =new CheckOut(dr);
-	    checkout.india();  
-	    Thread.sleep(2000);
+	    checkout.india(); 
 	    dr.findElement(By.xpath("//button[@routerlink='/dashboard/myorders']")).click();
 		Assert.assertEquals(dr.findElement(By.xpath("//tbody/tr[1]/td[2]")).getText(), "zara coat 3");
-
+       
 		dr.close();
 
 	}
