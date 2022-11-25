@@ -23,7 +23,7 @@ public class Practice_Page {
 		Login_Function lf=new Login_Function(dr);
 		dr.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		lf.goTo();
-		String name="zara coat 3";
+		String name="zara coa 3";
 		lf.ac("dinga@gmail.com", "Dinga@1438");
 		Product pr=new Product(dr);
 		Product product=new Product(dr);
@@ -33,10 +33,11 @@ public class Practice_Page {
 	    boolean asse=itemsIn.stream().anyMatch(i->i.getText().equalsIgnoreCase(name));
 	    Assert.assertTrue(asse);
 	    CheckOut checkout =new CheckOut(dr);
-	    checkout.india(); 
+	    checkout.india();  
+	    Thread.sleep(2000);
 	    dr.findElement(By.xpath("//button[@routerlink='/dashboard/myorders']")).click();
 		Assert.assertEquals(dr.findElement(By.xpath("//tbody/tr[1]/td[2]")).getText(), "zara coat 3");
-       
+
 		dr.close();
 
 	}
